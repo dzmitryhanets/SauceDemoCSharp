@@ -1,0 +1,11 @@
+{
+  "troubleUser": {
+    "userName": "locked_out_user",
+    "password": "secret_sauce"
+  },
+
+  "standardUser": {
+    "userName": "standard_user",
+    "password": "secret_sauce"
+  }
+}
