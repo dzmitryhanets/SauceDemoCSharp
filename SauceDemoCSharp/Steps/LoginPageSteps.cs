@@ -40,8 +40,7 @@ namespace SauceDemoCSharp.Steps
         [Then(@"error message '(.*)' appears")]
         public void ThenErrorMessageAppears(string errorMessage)
         {
-            new LoginPage(Driver)
-                .verifyIncorrectLogin(errorMessage);
+            loginPage.verifyIncorrectLogin(errorMessage);
         }
     }
 }
