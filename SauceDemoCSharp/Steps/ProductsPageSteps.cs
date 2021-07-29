@@ -19,5 +19,11 @@ namespace SauceDemoCSharp.Steps
         {
             productsPage.VerifyRedirectToProducts(expectedTitle);
         }
+
+        [When(@"user selects item #'(.*)' on Products page")]
+        public void WhenUserSelectsItem(int itemNumber)
+        {
+            productsPage.RedirectToItemPage(itemNumber);
+        }
     }
 }
