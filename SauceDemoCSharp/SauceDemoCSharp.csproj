@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Edge.SeleniumTools" Version="3.141.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="coverlet.collector" Version="1.2.0" />
     <PackageReference Include="NUnit" Version="3.13.1" />
@@ -17,6 +18,12 @@
     <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.29.0" />
     <PackageReference Include="SpecFlow" Version="3.7.38" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.7.38" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="msedgedriver.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

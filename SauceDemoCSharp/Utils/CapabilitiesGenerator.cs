@@ -1,9 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using Microsoft.Edge.SeleniumTools;
 using OpenQA.Selenium.Firefox;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SauceDemoCSharp.Utils
 {
@@ -17,6 +16,8 @@ namespace SauceDemoCSharp.Utils
                     return GetFireFoxDriver();
                 case BrowserType.Chrome:
                     return GetChromeDriver();
+                case BrowserType.Edge:
+                    return GetEdgeDriver();
                 default:
                     throw new ArgumentOutOfRangeException("no such browser");
             }
@@ -33,6 +34,14 @@ namespace SauceDemoCSharp.Utils
         {
             IWebDriver chromeDriver = new ChromeDriver();
             return chromeDriver;
+        }
+
+        private IWebDriver GetEdgeDriver()
+        {
+            var options = new EdgeOptions();
+            options.UseChromium = true;
+            IWebDriver edgeDriver = new EdgeDriver(options);
+            return edgeDriver;
         }
     }
 }
