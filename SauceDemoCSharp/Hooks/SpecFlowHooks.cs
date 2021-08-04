@@ -21,7 +21,7 @@ namespace SauceDemoCSharp.Hooks
         public void BeforeScenario()
         {
             var capabilitiesGenerator = new CapabilitiesGenerator();
-            IWebDriver driver = capabilitiesGenerator.Create(BrowserType.Edge);
+            IWebDriver driver = capabilitiesGenerator.Create(BrowserType.FireFox);
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             // Make this instance available to all other step definitions
