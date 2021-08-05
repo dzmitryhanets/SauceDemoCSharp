@@ -16,12 +16,6 @@ namespace SauceDemoCSharp.Pages
         {
         }
 
-        public ProductsPage VerifyRedirectToProducts(String expectedTitle)
-        {
-            Assert.AreEqual(expectedTitle, productsTitle);
-            return this;
-        }
-
         public string GetItemName(int itemIndex)
         {
             itemName = productItem[itemIndex].Text;

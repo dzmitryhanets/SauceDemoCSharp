@@ -13,12 +13,6 @@ namespace SauceDemoCSharp.Steps
             productsPage = new ProductsPage(Driver);
         }
 
-        [Then(@"user is redirected to '(.*)' page")]
-        public void ThenUserIsRedirectedTo(string expectedTitle)
-        {
-            productsPage.VerifyRedirectToProducts(expectedTitle);
-        }
-
         [When(@"user selects item #'(.*)' on Products page")]
         public void WhenUserSelectsItem(int itemNumber)
         {

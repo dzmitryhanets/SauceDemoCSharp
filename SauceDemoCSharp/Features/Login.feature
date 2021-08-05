@@ -9,4 +9,4 @@ Scenario: Login as problem user
 
 Scenario: Login as standard user
 	When login as 'standardUser'
-	Then user is redirected to 'PRODUCTS' page
+	Then page title is 'PRODUCTS'
