@@ -1,0 +1,11 @@
+﻿{
+  "bindingCultue": {
+    "language": "en-EN"
+  },
+  "language": {
+    "feature": "en-EN"
+  },
+  "stepAssemblies": [
+    { "assembly": "Allure.SpecFlowPlugin" }
+  ]
+}

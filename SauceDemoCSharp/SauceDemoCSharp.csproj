@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -7,21 +7,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="C:\Users\dmitry.ganets\.nuget\packages\allure.commons\3.5.0.65\contentFiles\any\netstandard2.0\allureConfig.Template.json" />
+    <Content Remove="C:\Users\dmitry.ganets\.nuget\packages\specflow.allure\3.5.0.65\contentFiles\any\netstandard2.0\allureConfig.Template.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Allure.Commons" Version="3.5.0.65" />
     <PackageReference Include="Microsoft.Edge.SeleniumTools" Version="3.141.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
-    <PackageReference Include="coverlet.collector" Version="1.2.0" />
     <PackageReference Include="NUnit" Version="3.13.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="91.0.4472.1900" />
     <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.29.0" />
-    <PackageReference Include="SpecFlow" Version="3.7.38" />
-    <PackageReference Include="SpecFlow.NUnit" Version="3.7.38" />
+    <PackageReference Include="SpecFlow" Version="3.9.22" />
+    <PackageReference Include="SpecFlow.Allure" Version="3.5.0.65" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.9.22" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="allureConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="msedgedriver.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="specflow.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="TestData\Users.json">
