@@ -2,3 +2,6 @@
 .git/
 packages/
 allure-results/
+/SauceDemoCSharp/obj/Debug/
+/SauceDemoCSharp/bin/Debug/
+/SauceDemoCSharp/obj/
