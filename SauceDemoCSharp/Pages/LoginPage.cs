@@ -15,11 +15,11 @@ namespace SauceDemoCSharp.Pages
         }
 
         String URL = "https://www.saucedemo.com";
-        private IWebElement userName => Driver.FindElement(By.Id("user-name"));
-        private IWebElement passwordField => Driver.FindElement(By.Id("password"));
-        private IWebElement loginBtn => Driver.FindElement(By.XPath("//input[@class='submit-button btn_action']"));
-        private IWebElement productsTitle => Driver.FindElement(By.XPath("//div[contains(text(),'Products')]"));
-        private IWebElement incorrectMsg => Driver.FindElement(By.XPath("//h3[@data-test='error']"));
+        private IWebElement UserName => Driver.FindElement(By.Id("user-name"));
+        private IWebElement PasswordField => Driver.FindElement(By.Id("password"));
+        private IWebElement LoginBtn => Driver.FindElement(By.XPath("//input[@class='submit-button btn_action']"));
+        //private IWebElement ProductsTitle => Driver.FindElement(By.XPath("//div[contains(text(),'Products')]"));
+        private IWebElement IncorrectMsg => Driver.FindElement(By.XPath("//h3[@data-test='error']"));
 
 
         public LoginPage OpenPage()
@@ -29,27 +29,27 @@ namespace SauceDemoCSharp.Pages
         }
 
         
-        public LoginPage inputName(String name)
+        public LoginPage InputName(String name)
         {
-            userName.SendKeys(name);
+            UserName.SendKeys(name);
             return this;
         }
 
-        public LoginPage inputPassword(String password)
+        public LoginPage InputPassword(String password)
         {
-            passwordField.SendKeys(password);
+            PasswordField.SendKeys(password);
             return this;
         }
 
-        public LoginPage clickLoginBtn()
+        public LoginPage ClickLoginBtn()
         {
-            loginBtn.Click();
+            LoginBtn.Click();
             return this;
         }
 
-        public LoginPage verifyIncorrectLogin(String errorMsg)
+        public LoginPage VerifyIncorrectLogin(String errorMsg)
         {
-            Assert.IsTrue(incorrectMsg.Text.Equals(errorMsg), "Correct message displayed");
+            Assert.IsTrue(IncorrectMsg.Text.Equals(errorMsg), "Correct message displayed");
             return this;
         }
     }

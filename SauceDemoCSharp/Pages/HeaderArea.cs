@@ -4,7 +4,7 @@ namespace SauceDemoCSharp.Pages
 {
     class HeaderArea : BasePage
     {
-        public IWebElement cartItem => Driver.FindElement(By.XPath("//a[@class='shopping_cart_link']"));
+        public IWebElement CartItem => Driver.FindElement(By.XPath("//a[@class='shopping_cart_link']"));
 
         public HeaderArea(IWebDriver driver) : base(driver)
         {
@@ -12,7 +12,7 @@ namespace SauceDemoCSharp.Pages
 
         public CartPage ClickCartIcon()
         {
-            cartItem.Click();
+            CartItem.Click();
             return new CartPage(Driver);
         }
     }

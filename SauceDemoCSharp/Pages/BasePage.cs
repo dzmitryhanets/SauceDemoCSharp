@@ -14,7 +14,7 @@ namespace SauceDemoCSharp.Pages
                 Driver = driver;           
         }
 
-        public bool isElementPresented(IWebElement element)
+        public bool IsElementPresented(IWebElement element)
         {
             try
             {
@@ -28,12 +28,12 @@ namespace SauceDemoCSharp.Pages
             }
         }
 
-        public void waitClickableElement(IWebElement element)
+        public void WaitClickableElement(IWebElement element)
         {
             wait.Until(ExpectedConditions.ElementToBeClickable(element));
         }
 
-        public void waitSelectedElement(IWebElement element)
+        public void WaitSelectedElement(IWebElement element)
         {
             wait.Until(ExpectedConditions.ElementToBeSelected(element));
         }

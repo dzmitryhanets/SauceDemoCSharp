@@ -6,7 +6,7 @@ namespace SauceDemoCSharp.Pages
 {
     class CommonPage : BasePage
     {
-        private string pageTitle => Driver.FindElement(By.ClassName("title")).Text;
+        private string PageTitle => Driver.FindElement(By.ClassName("title")).Text;
 
         public CommonPage(IWebDriver driver) : base(driver)
         {
@@ -14,7 +14,7 @@ namespace SauceDemoCSharp.Pages
 
         public CommonPage VerifyPageTitle(String expectedTitle)
         {
-            Assert.AreEqual(expectedTitle, pageTitle);
+            Assert.AreEqual(expectedTitle, PageTitle);
             return this;
         }
     }

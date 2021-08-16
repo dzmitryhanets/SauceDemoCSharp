@@ -5,7 +5,7 @@ namespace SauceDemoCSharp.Pages
 {
     class ItemPage : BasePage
     {
-        private string itemTitle => Driver.FindElement(By.XPath("//*[@class='inventory_details_name large_size']")).Text;
+        private string ItemTitle => Driver.FindElement(By.XPath("//*[@class='inventory_details_name large_size']")).Text;
 
         public ItemPage(IWebDriver driver) : base(driver)
         {
@@ -13,7 +13,7 @@ namespace SauceDemoCSharp.Pages
 
         public ItemPage VerifyItemPage(string expectedTitle)
         {
-            Assert.AreEqual(expectedTitle, itemTitle);
+            Assert.AreEqual(expectedTitle, ItemTitle);
             return this;
         }
     }

@@ -32,15 +32,15 @@ namespace SauceDemoCSharp.Steps
             var userName = $"@Users.{loginAs}.userName".GetTestData();
             var password = $"@Users.{loginAs}.password".GetTestData();
             loginPage
-                .inputName(userName)
-                .inputPassword(password)
-                .clickLoginBtn();
+                .InputName(userName)
+                .InputPassword(password)
+                .ClickLoginBtn();
         }
 
         [Then(@"error message '(.*)' appears")]
         public void ThenErrorMessageAppears(string errorMessage)
         {
-            loginPage.verifyIncorrectLogin(errorMessage);
+            loginPage.VerifyIncorrectLogin(errorMessage);
         }
     }
 }

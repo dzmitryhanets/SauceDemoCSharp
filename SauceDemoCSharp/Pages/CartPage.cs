@@ -4,7 +4,7 @@ namespace SauceDemoCSharp.Pages
 {
     class CartPage : BasePage
     {
-        private IWebElement continueShoppingBtn => Driver.FindElement(By.XPath("//button[@name='continue-shopping']"));
+        private IWebElement ContinueShoppingBtn => Driver.FindElement(By.XPath("//button[@name='continue-shopping']"));
 
         public CartPage(IWebDriver driver) : base(driver)
         {
@@ -12,7 +12,7 @@ namespace SauceDemoCSharp.Pages
 
         public ProductsPage ClickContinueShoppingBtn()
         {
-            continueShoppingBtn.Click();
+            ContinueShoppingBtn.Click();
             return new ProductsPage(Driver);
         }
     }

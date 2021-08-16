@@ -31,7 +31,7 @@ namespace SauceDemoCSharp.Pages
         public ProductsPage ClickItemInventoryBtn(int itemNumber)
         {
             inventoryBtn[itemNumber].Click();
-            isElementPresented(inventoryBtn[itemNumber]);
+            IsElementPresented(inventoryBtn[itemNumber]);
             return this;
         }
 

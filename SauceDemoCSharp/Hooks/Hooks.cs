@@ -2,6 +2,7 @@
 using BoDi;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using SauceDemoCSharp.Config;
 using SauceDemoCSharp.Utils;
 using System;
 using System.IO;
@@ -43,7 +44,7 @@ namespace SauceDemoCSharp.Hooks
         public void BeforeScenario()
         {
             var capabilitiesGenerator = new CapabilitiesGenerator();
-            IWebDriver driver = capabilitiesGenerator.Create(BrowserType.FireFox);
+            IWebDriver driver = capabilitiesGenerator.Create(ConfigReader.browserType);
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             // Make this instance available to all other step definitions

@@ -3,6 +3,7 @@ using OpenQA.Selenium.Chrome;
 using Microsoft.Edge.SeleniumTools;
 using OpenQA.Selenium.Firefox;
 using System;
+using SauceDemoCSharp.Config;
 
 namespace SauceDemoCSharp.Utils
 {
@@ -38,8 +39,10 @@ namespace SauceDemoCSharp.Utils
 
         private IWebDriver GetEdgeDriver()
         {
-            var options = new EdgeOptions();
-            options.UseChromium = true;
+            var options = new EdgeOptions
+            {
+                UseChromium = true
+            };
             IWebDriver edgeDriver = new EdgeDriver(options);
             return edgeDriver;
         }
