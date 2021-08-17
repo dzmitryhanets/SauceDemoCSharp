@@ -1,8 +1,8 @@
 ﻿namespace SauceDemoCSharp.Config
 {
-    class ConfigReader
+    public static class ConfigReader
     {
-        public static readonly BrowserType browserType = BrowserType.Edge;
+        public static readonly BrowserType browserType = BrowserType.FireFox;
     }
 
     public enum BrowserType
