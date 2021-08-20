@@ -6,7 +6,7 @@ namespace SauceDemoCSharp.Pages
 {
     public class BasePage
     {
-        protected IWebDriver Driver { get; set; }
+        protected IWebDriver Driver { get; private set; }
         WebDriverWait wait;
 
         public BasePage(IWebDriver driver)
