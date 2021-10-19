@@ -7,6 +7,7 @@ namespace SauceDemoCSharp.Pages
     public class BasePage
     {
         protected IWebDriver Driver { get; private set; }
+
         WebDriverWait wait;
 
         public BasePage(IWebDriver driver)
@@ -30,12 +31,14 @@ namespace SauceDemoCSharp.Pages
 
         public void WaitClickableElement(IWebElement element)
         {
-            wait.Until(ExpectedConditions.ElementToBeClickable(element));
+            wait = new WebDriverWait(Driver, new TimeSpan(0, 0, 30));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
         }
 
         public void WaitSelectedElement(IWebElement element)
         {
-            wait.Until(ExpectedConditions.ElementToBeSelected(element));
+            wait = new WebDriverWait(Driver, new TimeSpan(0, 0, 30));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeSelected(element));
         }
     }
 }
