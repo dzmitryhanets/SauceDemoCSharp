@@ -30,7 +30,9 @@ namespace SauceDemoCSharp.Utils
 
         private IWebDriver GetChromeDriver()
         {
-            IWebDriver chromeDriver = new ChromeDriver();
+            var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArguments("headless");
+            IWebDriver chromeDriver = new ChromeDriver(chromeOptions);
             return chromeDriver;
         }
 
