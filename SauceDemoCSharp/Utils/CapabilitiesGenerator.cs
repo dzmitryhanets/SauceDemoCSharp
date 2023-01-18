@@ -11,17 +11,15 @@ namespace SauceDemoCSharp.Utils
     {
         public IWebDriver Create(BrowserType browserType)
         {
-            switch (browserType)
+            IWebDriver driver = browserType switch
             {
-                case BrowserType.FireFox:
-                    return GetFireFoxDriver();
-                case BrowserType.Chrome:
-                    return GetChromeDriver();
-                case BrowserType.Edge:
-                    return GetEdgeDriver();
-                default:
-                    throw new ArgumentOutOfRangeException("no such browser");
-            }
+                BrowserType.FireFox => GetFireFoxDriver(),
+                BrowserType.Chrome => GetChromeDriver(),
+                BrowserType.Edge => GetEdgeDriver(),
+                _ => throw new ArgumentOutOfRangeException($"Browser type {browserType} is not supported"),
+            };
+
+            return driver;
         }
 
         private IWebDriver GetFireFoxDriver()

@@ -2,7 +2,7 @@
 {
     public static class ConfigReader
     {
-        public static readonly BrowserType browserType = BrowserType.FireFox;
+        public static readonly BrowserType browserType = BrowserType.Chrome;
     }
 
     public enum BrowserType
