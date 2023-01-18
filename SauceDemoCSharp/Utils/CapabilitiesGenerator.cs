@@ -32,6 +32,7 @@ namespace SauceDemoCSharp.Utils
         {
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments("headless");
+            chromeOptions.AddArguments("disable-setuid-sandbox");
             IWebDriver chromeDriver = new ChromeDriver(chromeOptions);
             return chromeDriver;
         }
