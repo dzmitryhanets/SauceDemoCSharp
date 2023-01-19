@@ -31,11 +31,14 @@ namespace SauceDemoCSharp.Utils
         private IWebDriver GetChromeDriver()
         {
             var chromeOptions = new ChromeOptions();
-            chromeOptions.AddArguments("headless");
-            chromeOptions.AddArguments("no-sandbox");
-            chromeOptions.AddArguments("disable-gpu");
-            chromeOptions.AddArguments("disable-setuid-sandbox");
-            chromeOptions.AddArguments("disable-dev-shm-usage");
+            if (ConfigReader.isHeadlessModeOn == true)
+            {
+                chromeOptions.AddArguments("headless");
+                chromeOptions.AddArguments("no-sandbox");
+                chromeOptions.AddArguments("disable-gpu");
+                chromeOptions.AddArguments("disable-setuid-sandbox");
+                chromeOptions.AddArguments("disable-dev-shm-usage");
+            }
             IWebDriver chromeDriver = new ChromeDriver(chromeOptions);
             return chromeDriver;
         }
