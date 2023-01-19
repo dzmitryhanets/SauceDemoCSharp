@@ -7,7 +7,7 @@ Background:
 
 Scenario: User is redirected to Cart page
 	When user click cart icon
-	Then page title is 'YOUR CART'
+	Then page title is 'YOUR CART11'
 
 Scenario: User is redirected to Products page from Cart
 	When user click cart icon
